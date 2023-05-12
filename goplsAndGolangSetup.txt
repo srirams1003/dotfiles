@@ -1,0 +1,26 @@
+# tested only for linux ubuntu btw
+
+# get newer version of golang cuz gopls cries if older version
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt update
+sudo apt install golang-go
+
+
+# test file (NAME IT "hello.go"):
+<START>
+package main
+
+import "fmt"
+
+func main() {
+    sad()
+    fmt.Println("Hello, World!")
+}
+
+func sad(){
+    fmt.Println("wassup")
+}
+<END>
+
+# Run using this:
+go run hello.go 
