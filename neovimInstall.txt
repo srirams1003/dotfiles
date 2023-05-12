@@ -1,0 +1,24 @@
+Installing Neovim on a Unix based machine:
+
+- [ ] Create a folder named nvim in ~/.config 
+- [ ] Create a folder named "autoload" inside this new folder and cd into it
+- [ ] Run the command:   "curl https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -o plug.vim" (this command installs the nvim plugin manager)
+- [ ] Visit if the last step failed: https://github.com/junegunn/vim-plug 
+- [ ] Create a file named init.vim in the ~/.config/nvim folder
+- [ ] Copy paste your needed nvim config in this file
+- [ ] Install plugins with :PlugInstall while vimmed inside the init.vim file
+
+Done.
+
+
+To get newer stable versions of nvim:
+
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
+
+
+
+
+
+
