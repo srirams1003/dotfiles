@@ -2,6 +2,8 @@ plugins=(git
 zsh-autosuggestions
 )
 
+# run this thing: git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 source $ZSH/oh-my-zsh.sh
 
 alias gs="git status"
