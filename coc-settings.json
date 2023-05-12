@@ -18,5 +18,7 @@
     ]
 }
 
+# put coc.vim and fzf.vim under "~/.config/nvim/plug-config" (create "plug-config" in the same directory where "plugged" is)
+
 # look at this page below for coc plugins and install them with :CocInstall <names of plugins>
 # https://www.npmjs.com/search?q=keywords%3Acoc.nvim
