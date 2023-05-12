@@ -18,7 +18,7 @@ alias gpl="git pull"
 alias v="nvim"
 alias vim="nvim"
 alias t="tmux"
-alias ta="tmux a -t"
+alias ta="tmux a"
 export EDITOR='nvim'
 # ssuresh custom aliases
 alias kgpo='kubectl get pods -o wide'
