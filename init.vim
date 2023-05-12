@@ -99,8 +99,10 @@ let g:rooter_manual_only = 1
 nnoremap <silent> <Leader>r :Rooter<CR>
 
 
-" pbcopy paste to clipboard
-xnoremap <silent> <Leader>m :w !pbcopy<CR><CR>
+" pbcopy paste to clipboard (FOR MACOS)
+# xnoremap <silent> <Leader>m :w !pbcopy<CR><CR>
+# FOR LINUX:
+xnoremap <silent> <Leader>m :w !xsel -i -b<CR><CR>
 
 
 
