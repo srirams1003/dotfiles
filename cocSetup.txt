@@ -3,4 +3,4 @@
 # look at this page below for coc plugins and install them with :CocInstall <names of plugins>
 # https://www.npmjs.com/search?q=keywords%3Acoc.nvim
 
-:CocInstall coc-go coc-pyright coc-eslint coc-tsserver coc-css coc-html
+:CocInstall coc-go coc-pyright coc-eslint coc-tsserver coc-css coc-html coc-clangd
