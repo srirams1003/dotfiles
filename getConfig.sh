@@ -1,3 +1,7 @@
+# after script runs successfully:
+# log out and log back in to machine
+# do prefix + capital I inside a tmux session
+
 sudo apt update
 sudo apt install zsh nodejs npm vim tmux
 sudo apt install curl wget git
