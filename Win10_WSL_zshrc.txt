@@ -107,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 #
 alias gs="git status"
 alias ga="git add"
+alias gc='git clone'
 alias gcm="git commit -m"
 alias gp="git push"
 alias gb="git branch" 
