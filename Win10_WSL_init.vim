@@ -29,7 +29,20 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'wellle/context.vim'
 Plug 'tpope/vim-surround'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
 call plug#end()
+
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 
 autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
 
@@ -104,5 +117,8 @@ nnoremap <silent> <Leader>r :Rooter<CR>
 " FOR LINUX:
 xnoremap <silent> <Leader>m :w !xsel -i -b<CR><CR>
 
+
+nnoremap <silent> <Leader>c :MarkdownPreviewToggle<CR>
+nnoremap <silent> <Leader>h :Prettier<CR>
 
 
