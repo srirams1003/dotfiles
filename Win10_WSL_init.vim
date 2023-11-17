@@ -121,4 +121,8 @@ xnoremap <silent> <Leader>m :w !xsel -i -b<CR><CR>
 nnoremap <silent> <Leader>c :MarkdownPreviewToggle<CR>
 nnoremap <silent> <Leader>h :Prettier<CR>
 
+" a for activate mouse
+nnoremap <silent> <Leader>a :set mouse=a<CR> 
+" d for deactivate mouse
+nnoremap <silent> <Leader>d :set mouse=v<CR>
 
