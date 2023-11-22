@@ -126,3 +126,16 @@ nnoremap <silent> <Leader>a :set mouse=a<CR>
 " d for deactivate mouse
 nnoremap <silent> <Leader>d :set mouse=v<CR>
 
+
+" Toggle spellchecking
+function! ToggleSpellCheck()
+  set spell!
+  if &spell
+    echo "Spellcheck ON"
+  else
+    echo "Spellcheck OFF"
+  endif
+endfunction
+
+nnoremap <silent> <Leader>s :call ToggleSpellCheck()<CR>
+
