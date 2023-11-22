@@ -121,21 +121,37 @@ xnoremap <silent> <Leader>m :w !xsel -i -b<CR><CR>
 nnoremap <silent> <Leader>c :MarkdownPreviewToggle<CR>
 nnoremap <silent> <Leader>h :Prettier<CR>
 
-" a for activate mouse
-nnoremap <silent> <Leader>a :set mouse=a<CR> 
-" d for deactivate mouse
-nnoremap <silent> <Leader>d :set mouse=v<CR>
-
 
 " Toggle spellchecking
 function! ToggleSpellCheck()
-  set spell!
-  if &spell
-    echo "Spellcheck ON"
-  else
-    echo "Spellcheck OFF"
-  endif
+    set spell!
+    if &spell
+        echo "Spellcheck ON"
+    else
+        echo "Spellcheck OFF"
+    endif
 endfunction
 
 nnoremap <silent> <Leader>s :call ToggleSpellCheck()<CR>
 
+
+" Toggle mouse
+function! ToggleMouse()
+    if &mouse == ''
+        set mouse=a
+        echo "Mouse mode ON"
+    else
+        set mouse=
+        echo "Mouse mode OFF"
+    endif
+endfunction
+
+
+nnoremap <silent> <Leader>d :call ToggleMouse()<CR>
+
+" Toggle relativenumber
+function! ToggleRelativeLine()
+    set relativenumber!
+endfunction
+
+nnoremap <silent> <Leader>a :call ToggleRelativeLine()<CR>
