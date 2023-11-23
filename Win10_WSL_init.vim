@@ -155,3 +155,9 @@ function! ToggleRelativeLine()
 endfunction
 
 nnoremap <silent> <Leader>a :call ToggleRelativeLine()<CR>
+
+
+" Go to last active tab
+au TabLeave * let g:lasttab = tabpagenr()
+nnoremap <silent> <c-s> :exe "tabn ".g:lasttab<cr>
+vnoremap <silent> <c-s> :exe "tabn ".g:lasttab<cr>
