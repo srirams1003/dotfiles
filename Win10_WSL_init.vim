@@ -161,3 +161,7 @@ nnoremap <silent> <Leader>a :call ToggleRelativeLine()<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-s> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-s> :exe "tabn ".g:lasttab<cr>
+
+" commenting
+vnoremap <leader>q :Commentary<CR>
+nnoremap <leader>q :Commentary<CR>
