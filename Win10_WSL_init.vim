@@ -163,5 +163,6 @@ nnoremap <silent> <c-s> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-s> :exe "tabn ".g:lasttab<cr>
 
 " commenting
-vnoremap <leader>q :Commentary<CR>
-nnoremap <leader>q :Commentary<CR>
+vnoremap <silent> <leader>q :Commentary<CR>
+nnoremap <silent> <leader>q :Commentary<CR>
+
