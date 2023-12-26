@@ -19,7 +19,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'ThePrimeagen/vim-be-good'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -35,6 +35,8 @@ Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
+Plug 'ojroques/vim-oscyank'  " clipboard over ssh through tmux
 
 call plug#end()
 
@@ -102,6 +104,7 @@ nnoremap <silent> <Leader>z :NERDTree<CR>
 " turns highlighting off
 nnoremap <silent> <Leader>n :noh<CR>
 
+
 " need to do this for some pesky reason (used to jump forward by a page in
 " case you forgot)
 nnoremap <C-f> <C-f> 
@@ -112,10 +115,11 @@ let g:rooter_manual_only = 1
 nnoremap <silent> <Leader>r :Rooter<CR>
 
 
-" pbcopy paste to clipboard (FOR MACOS)
+" "  I DO NOT USE THIS ANYMORE
+" " pbcopy paste to clipboard (FOR MACOS)
 " xnoremap <silent> <Leader>m :w !pbcopy<CR><CR>
-" FOR LINUX:
-xnoremap <silent> <Leader>m :w !xsel -i -b<CR><CR>
+" " FOR LINUX:
+" xnoremap <silent> <Leader>m :w !xsel -i -b<CR><CR>
 
 
 nnoremap <silent> <Leader>c :MarkdownPreviewToggle<CR>
@@ -162,7 +166,21 @@ au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-s> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-s> :exe "tabn ".g:lasttab<cr>
 
-" commenting
+
 vnoremap <silent> <leader>q :Commentary<CR>
 nnoremap <silent> <leader>q :Commentary<CR>
+
+nmap <leader>m <Plug>OSCYankOperator
+nmap <leader>mm <leader>c_
+vmap <leader>m <Plug>OSCYankVisual
+
+
+" yank operation don't need to use the *" register (system clipboard)
+set clipboard+=unnamedplus
+
+autocmd TextYankPost *
+    \ if v:event.operator is 'y' && v:event.regname is '+' |
+    \ execute 'OSCYankRegister +' |
+    \ endif
+
 
