@@ -175,9 +175,6 @@ nmap <leader>mm <leader>c_
 vmap <leader>m <Plug>OSCYankVisual
 
 
-" yank operation don't need to use the *" register (system clipboard)
-set clipboard+=unnamedplus
-
 autocmd TextYankPost *
     \ if v:event.operator is 'y' && v:event.regname is '+' |
     \ execute 'OSCYankRegister +' |
