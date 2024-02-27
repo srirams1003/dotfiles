@@ -181,3 +181,5 @@ autocmd TextYankPost *
     \ endif
 
 
+" :qa
+nnoremap <silent> <Leader>x :qa<CR>
