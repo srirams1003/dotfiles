@@ -183,3 +183,7 @@ autocmd TextYankPost *
 
 " :qa
 nnoremap <silent> <Leader>x :qa<CR>
+
+" shortcuts to move to next and previous tabs
+nnoremap <silent> <Leader>t :tabnext<CR>
+nnoremap <silent> <Leader>y :tabprevious<CR>
