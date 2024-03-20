@@ -15,6 +15,11 @@ sudo apt install make gcc ripgrep unzip neovim
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
 git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
+git config --global user.email "sriram.suresh449@gmail.com"
+git config --global user.name "Sriram Suresh"
+
+git config --global credential.helper store  'cache --timeout=3000000'
+
 cp ~/dotfiles/Win10_WSL_zshrc.txt ~/.
 mv ~/Win10_WSL_zshrc.txt ~/.zshrc
 
