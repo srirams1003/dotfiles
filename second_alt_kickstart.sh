@@ -20,6 +20,10 @@ git config --global user.name "Sriram Suresh"
 
 git config --global credential.helper store  'cache --timeout=3000000'
 
+sudo npm i -g pyright
+sudo npm install -g diagnostic-languageserver
+sudo npm install -g typescript-language-server typescript
+
 cp ~/dotfiles/Win10_WSL_zshrc.txt ~/.
 mv ~/Win10_WSL_zshrc.txt ~/.zshrc
 
