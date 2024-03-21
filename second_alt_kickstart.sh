@@ -9,8 +9,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
-sudo apt update
-sudo apt install make gcc ripgrep unzip neovim
+sudo apt update -y
+sudo apt install make gcc ripgrep unzip neovim -y
 
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
 git clone https://github.com/srirams1003/lua-nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
@@ -23,7 +23,7 @@ git config --global credential.helper store  'cache --timeout=3000000'
 sudo npm i -g pyright
 sudo npm install -g diagnostic-languageserver
 sudo npm install -g typescript-language-server typescript
-sudo apt-get install clangd-12
+sudo apt-get install clangd-12 -y
 sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
 sudo npm i -g vscode-langservers-extracted # for html
 sudo npm i -g css-variables-language-server # for css
