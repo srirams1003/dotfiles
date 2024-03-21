@@ -1,1 +1,5 @@
-# to get your preferred neovim and tmux environment, run firstScript.sh follwed by secondScript.sh using $ source ./<name of script>
+### To get your preferred Neovim and Tmux environment, run these
+
+`source ./firstScript.sh`
+<br>
+`source ./second_alt_kickstart.sh`
