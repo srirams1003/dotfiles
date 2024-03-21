@@ -2,4 +2,4 @@
 
 `source ./firstScript.sh`
 <br>
-`souce ./second_alt_kickstart.sh`
+`source ./second_alt_kickstart.sh`
