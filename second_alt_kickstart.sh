@@ -13,7 +13,7 @@ sudo apt update
 sudo apt install make gcc ripgrep unzip neovim
 
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
-git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone https://github.com/srirams1003/lua-nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
 git config --global user.email "sriram.suresh449@gmail.com"
 git config --global user.name "Sriram Suresh"
