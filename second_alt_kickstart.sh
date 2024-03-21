@@ -25,6 +25,8 @@ sudo npm install -g diagnostic-languageserver
 sudo npm install -g typescript-language-server typescript
 sudo apt-get install clangd-12
 sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
+sudo npm i -g vscode-langservers-extracted # for html
+sudo npm i -g css-variables-language-server # for css
 
 cp ~/dotfiles/Win10_WSL_zshrc.txt ~/.
 mv ~/Win10_WSL_zshrc.txt ~/.zshrc
