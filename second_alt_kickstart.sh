@@ -29,6 +29,14 @@ sudo npm i -g vscode-langservers-extracted  # for html
 sudo npm i -g css-variables-language-server # for css
 sudo apt-get -y install golang-go gopls
 
+# # ruby stuff
+# # this would also mean that you need to install ruby first. idk how to do that for ubuntu
+# # is chruby even a thing for ubuntu??
+# sudo gem install ruby-lsp
+# sudo gem install colorls
+
+# I am also skipping installing java lsp for now since I don't ever use Java and it seems complicated and why would i lose some seconds in loading a plugin I never even use
+
 cp ~/dotfiles/Win10_WSL_zshrc.txt ~/.
 mv ~/Win10_WSL_zshrc.txt ~/.zshrc
 
