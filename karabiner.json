@@ -75,30 +75,30 @@
                     "manipulate_caps_lock_led": false,
                     "simple_modifications": [
                         {
-                            "from":
-                            {
+                            "from": {
                                 "pointing_button": "button4"
                             },
-                            "to":
-                            {
-                                "key_code": "open_bracket",
-                                "modifiers": [
-                                    "left_command"
-                                ]
-                            }
+                            "to": [
+                                {
+                                    "key_code": "open_bracket",
+                                    "modifiers": [
+                                        "left_command"
+                                    ]
+                                }
+                            ]
                         },
                         {
-                            "from":
-                            {
+                            "from": {
                                 "pointing_button": "button5"
                             },
-                            "to":
-                            {
-                                "key_code": "close_bracket",
-                                "modifiers": [
-                                    "left_command"
-                                ]
-                            }
+                            "to": [
+                                {
+                                    "key_code": "close_bracket",
+                                    "modifiers": [
+                                        "left_command"
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     "treat_as_built_in_keyboard": false
@@ -201,6 +201,16 @@
                             "to": [
                                 {
                                     "key_code": "escape"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "keypad_num_lock"
+                            },
+                            "to": [
+                                {
+                                    "apple_vendor_top_case_key_code": "keyboard_fn"
                                 }
                             ]
                         }
