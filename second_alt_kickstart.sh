@@ -29,6 +29,9 @@ sudo npm i -g vscode-langservers-extracted  # for html
 sudo npm i -g css-variables-language-server # for css
 sudo apt-get -y install golang-go gopls
 
+# powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 # # ruby stuff
 # # this would also mean that you need to install ruby first. idk how to do that for ubuntu
 # # is chruby even a thing for ubuntu??
