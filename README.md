@@ -1,5 +1,10 @@
 ### To get your preferred Neovim and Tmux environment, run these
 
-`source ./firstScript.sh`
+```bash
+source ./firstScript.sh
+```
 <br>
-`source ./second_alt_kickstart.sh`
+
+```bash
+source ./second_alt_kickstart.sh
+```
