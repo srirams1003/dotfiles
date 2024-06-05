@@ -171,6 +171,9 @@ alias ls='colorls'
 alias open='xdg-open'
 
 alias python="python3"
+alias gpus='ssh -Y sriram@10.125.189.149 -p 6161'
+alias ngpus='ssh sriram@10.125.188.43'
+alias grep='grep -i'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
