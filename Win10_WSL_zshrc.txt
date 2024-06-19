@@ -181,6 +181,7 @@ alias python="python3"
 alias gpus='ssh -Y sriram@REDACTED-HOST -p 6161'
 alias ngpus='ssh sriram@REDACTED-HOST'
 alias grep='grep -i'
+alias cdd='cd /mnt/c/Users/REDACTED\ S/Desktop'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
