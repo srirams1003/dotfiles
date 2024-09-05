@@ -2,6 +2,8 @@ plugins=(git
 zsh-autosuggestions
 )
 
+# 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
+
 # run this thing: git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 source $ZSH/oh-my-zsh.sh
