@@ -68,4 +68,6 @@ cd ~/dotfiles
 
 sudo cpan JSON
 
-lxappearance
+lxappearance &
+
+flatpak install --noninteractive flathub hu.irl.cameractrls
