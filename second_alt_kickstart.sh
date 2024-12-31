@@ -10,11 +10,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update -y
-sudo apt install make gcc ripgrep unzip neovim tldr -y
+sudo apt install make gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3blocks alacritty simplescreenrecorder psensor -y
 tldr -u
 
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
 git clone https://github.com/srirams1003/lua-nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+
+git clone https://github.com/srirams1003/i3-dotfiles.git "${XDG_CONFIG_HOME:-$HOME/.config}"/i3
 
 git config --global user.email "sriram.suresh449@gmail.com"
 git config --global user.name "Sriram Suresh"
