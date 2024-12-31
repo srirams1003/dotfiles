@@ -18,6 +18,11 @@ git clone https://github.com/srirams1003/lua-nvim-config.git "${XDG_CONFIG_HOME:
 
 git clone https://github.com/srirams1003/i3-dotfiles.git "${XDG_CONFIG_HOME:-$HOME/.config}"/i3
 
+sudo ln -s ~/.config/i3/i3blocks.conf /etc/i3blocks.conf
+sudo ln -s ~/.config/i3/i3status.conf /etc/i3status.conf # i use i3blocks instead of i3status but adding this too just in case
+ln -s ~/.config/i3/.alacritty.toml ~/.alacritty.toml
+sudo ln -s ~/.config/i3/usr-share-X11-xkb-symbols-pc /usr/share/X11/xkb/symbols/pc
+
 git config --global user.email "sriram.suresh449@gmail.com"
 git config --global user.name "Sriram Suresh"
 
