@@ -10,7 +10,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update -y
-sudo apt install make gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3blocks alacritty simplescreenrecorder psensor -y
+sudo apt install make gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3blocks alacritty simplescreenrecorder psensor rofi -y
 tldr -u
 
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
@@ -21,6 +21,7 @@ git clone https://github.com/srirams1003/i3-dotfiles.git "${XDG_CONFIG_HOME:-$HO
 sudo ln -s ~/.config/i3/i3blocks.conf /etc/i3blocks.conf
 sudo ln -s ~/.config/i3/i3status.conf /etc/i3status.conf # i use i3blocks instead of i3status but adding this too just in case
 ln -s ~/.config/i3/.alacritty.toml ~/.alacritty.toml
+ln -s ~/.config/i3/config.rasi ~/.config/rofi/config.rasi
 sudo ln -s ~/.config/i3/usr-share-X11-xkb-symbols-pc /usr/share/X11/xkb/symbols/pc
 
 git config --global user.email "sriram.suresh449@gmail.com"
