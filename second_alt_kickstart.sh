@@ -23,6 +23,8 @@ sudo ln -sf ~/.config/i3/i3status.conf /etc/i3status.conf # i use i3blocks inste
 ln -sf ~/.config/i3/.alacritty.toml ~/.alacritty.toml
 mkdir -p ~/.config/rofi
 ln -sf ~/.config/i3/config.rasi ~/.config/rofi/config.rasi
+# NEED TO MAKE SURE THAT THIS LINE BELOW WORKS. HAVEN'T TESTED IT SO FAR BUT IT SHOULD WORK
+[ -e /usr/share/X11/xkb/symbols/pc ] && sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc.bak
 sudo ln -sf ~/.config/i3/usr-share-X11-xkb-symbols-pc /usr/share/X11/xkb/symbols/pc
 
 git config --global user.email "sriram.suresh449@gmail.com"
@@ -65,3 +67,5 @@ chsh -s $(which zsh)
 cd ~/dotfiles
 
 sudo cpan JSON
+
+lxappearance
