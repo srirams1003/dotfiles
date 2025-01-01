@@ -26,6 +26,8 @@ ln -sf ~/.config/i3/config.rasi ~/.config/rofi/config.rasi
 # NEED TO MAKE SURE THAT THIS LINE BELOW WORKS. HAVEN'T TESTED IT SO FAR BUT IT SHOULD WORK
 [ -e /usr/share/X11/xkb/symbols/pc ] && sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc.bak
 sudo ln -sf ~/.config/i3/usr-share-X11-xkb-symbols-pc /usr/share/X11/xkb/symbols/pc
+ln -sf ~/.config/i3/.p10k.zsh ~/.p10k.zsh
+ln -sf ~/.config/i3/.zshrc ~/.zshrc
 
 git config --global user.email "sriram.suresh449@gmail.com"
 git config --global user.name "Sriram Suresh"
@@ -53,8 +55,8 @@ sudo gem install colorls
 
 # I am also skipping installing java lsp for now since I don't ever use Java and it seems complicated and why would i lose some seconds in loading a plugin I never even use
 
-cp ~/dotfiles/Win10_WSL_zshrc.txt ~/.
-mv ~/Win10_WSL_zshrc.txt ~/.zshrc
+# cp ~/dotfiles/Win10_WSL_zshrc.txt ~/.
+# mv ~/Win10_WSL_zshrc.txt ~/.zshrc
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
