@@ -7,7 +7,7 @@
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-brew install neovim fastfetch ripgrep unzip tldr copyq bat fzf 
+brew install neovim fastfetch ripgrep unzip tldr copyq bat fzf yarn 
 
 tldr -u
 
