@@ -8,7 +8,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-sudo pacman -S --noconfirm make flatpak gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python-pip fastfetch sl docker gimp virtualbox ffmpeg
+sudo pacman -S --noconfirm make flatpak gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python-pip fastfetch sl docker gimp virtualbox ffmpeg ruby go gopls clang
+
 yes | yay -S simplescreenrecorder google-chrome
 
 tldr -u
@@ -38,8 +39,6 @@ git config --global user.email "sriram.suresh449@gmail.com"
 git config --global user.name "Sriram Suresh"
 
 git config --global credential.helper store  'cache --timeout=3000000'
-
-sudo pacman -S --noconfirm ruby go gopls clang
 
 sudo npm i -g pyright
 sudo npm install -g diagnostic-languageserver
@@ -72,7 +71,8 @@ chsh -s /bin/zsh
 
 cd ~/dotfiles
 
-cpan JSON
+# sudo cpan JSON
+sudo /usr/bin/core_perl/cpan JSON
 
 # lxappearance &
 
