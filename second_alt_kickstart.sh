@@ -9,7 +9,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
 sudo pacman -S --noconfirm make flatpak gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python-pip fastfetch sl docker gimp virtualbox ffmpeg
-yes | yay -S simplescreenrecorder
+yes | yay -S simplescreenrecorder google-chrome
 
 tldr -u
 
