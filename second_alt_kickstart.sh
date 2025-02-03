@@ -8,10 +8,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
-sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
-sudo apt update -y
-sudo apt install make gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl docker.io gimp virtualbox ffmpeg -y
+sudo pacman -S --noconfirm make flatpak gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python-pip fastfetch sl docker gimp virtualbox ffmpeg
+yes | yay -S simplescreenrecorder
+
 tldr -u
 
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
@@ -40,14 +39,13 @@ git config --global user.name "Sriram Suresh"
 
 git config --global credential.helper store  'cache --timeout=3000000'
 
+sudo pacman -S --noconfirm ruby go gopls clang
+
 sudo npm i -g pyright
 sudo npm install -g diagnostic-languageserver
 sudo npm install -g typescript-language-server typescript
-sudo apt-get install clangd-12 -y
-sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
 sudo npm i -g vscode-langservers-extracted  # for html
 sudo npm i -g css-variables-language-server # for css
-sudo apt-get -y install golang-go gopls
 
 # powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -55,9 +53,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # # ruby stuff
 # # this would also mean that you need to install ruby first. idk how to do that for ubuntu
 # # is chruby even a thing for ubuntu??
-sudo apt-get -y install ruby-full
-sudo gem install ruby-lsp
-sudo gem install colorls
+gem install ruby-lsp
+gem install colorls
 
 # I am also skipping installing java lsp for now since I don't ever use Java and it seems complicated and why would i lose some seconds in loading a plugin I never even use
 
@@ -71,11 +68,11 @@ ln -sf ~/.config/i3/.tmux.conf ~/.tmux.conf
 
 source ~/.zshrc
 
-chsh -s $(which zsh)
+chsh -s /bin/zsh
 
 cd ~/dotfiles
 
-sudo cpan JSON
+cpan JSON
 
 # lxappearance &
 
