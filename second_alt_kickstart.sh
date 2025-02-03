@@ -43,7 +43,7 @@ git config --global credential.helper store  'cache --timeout=3000000'
 sudo npm i -g pyright
 sudo npm install -g diagnostic-languageserver
 sudo npm install -g typescript-language-server typescript
-sudo apt-get install clangd-12 -y
+sudo apt-get install clang -y
 sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
 sudo npm i -g vscode-langservers-extracted  # for html
 sudo npm i -g css-variables-language-server # for css
