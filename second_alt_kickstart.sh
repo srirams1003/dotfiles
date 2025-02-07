@@ -8,9 +8,16 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-sudo dnf install -y make flatpak gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python-pip fastfetch sl docker gimp virtualbox ffmpeg ruby go gopls clang tesseract-ocr gimagereader htop
+sudo dnf install -y make flatpak gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty rofi lxappearance arandr copyq bat maim xclip xdotool fzf python-pip fastfetch sl docker gimp ffmpeg ruby go gopls clang htop ruby-devel cpan
 
-# yes | yay -S simplescreenrecorder google-chrome
+sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
+sudo dnf install -y ImageMagick tesseract gimagereader-qt simplescreenrecorder copr 
+sudo dnf install -y lm_sensors
+sudo dnf copr -y enable jgoody/psensor
+sudo dnf install -y psensor
+sudo dnf install  -y virtualbox
+
+sudo dnf install -y google-chrome-stable
 
 tldr -u
 
@@ -25,9 +32,9 @@ ln -sf ~/.config/i3/.alacritty.toml ~/.alacritty.toml
 mkdir -p ~/.config/rofi
 ln -sf ~/.config/i3/config.rasi ~/.config/rofi/config.rasi
 
-# for rebinding esc to capslock and vice versa
-[ -e /usr/share/X11/xkb/symbols/pc ] && sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc.bak
-sudo ln -sf ~/.config/i3/usr-share-X11-xkb-symbols-pc /usr/share/X11/xkb/symbols/pc
+# # for rebinding esc to capslock and vice versa
+# [ -e /usr/share/X11/xkb/symbols/pc ] && sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc.bak
+# sudo ln -sf ~/.config/i3/usr-share-X11-xkb-symbols-pc /usr/share/X11/xkb/symbols/pc
 ln -sf ~/.config/i3/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/.config/i3/.zshrc ~/.zshrc
 
@@ -71,9 +78,8 @@ chsh -s /bin/zsh
 
 cd ~/dotfiles
 
-# sudo cpan JSON
-sudo /usr/bin/core_perl/cpan JSON
+sudo cpan JSON
 
 # lxappearance &
 
-# flatpak install --noninteractive flathub hu.irl.cameractrls
+flatpak install --noninteractive flathub hu.irl.cameractrls
