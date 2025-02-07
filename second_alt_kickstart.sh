@@ -8,9 +8,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-sudo pacman -S --noconfirm make flatpak gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python-pip fastfetch sl docker gimp virtualbox ffmpeg ruby go gopls clang
+sudo dnf install -y make flatpak gcc ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python-pip fastfetch sl docker gimp virtualbox ffmpeg ruby go gopls clang tesseract-ocr gimagereader htop
 
-yes | yay -S simplescreenrecorder google-chrome
+# yes | yay -S simplescreenrecorder google-chrome
 
 tldr -u
 
@@ -31,9 +31,9 @@ sudo ln -sf ~/.config/i3/usr-share-X11-xkb-symbols-pc /usr/share/X11/xkb/symbols
 ln -sf ~/.config/i3/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/.config/i3/.zshrc ~/.zshrc
 
-# so I can change the notification timeout for dunst to 3 secs from default of 10 secs
-[ -e /etc/xdg/dunst/dunstrc ] && sudo mv /etc/xdg/dunst/dunstrc /etc/xdg/dunst/dunstrc.bak
-sudo ln -sf ~/.config/i3/dunstrc /etc/xdg/dunst/dunstrc
+# # so I can change the notification timeout for dunst to 3 secs from default of 10 secs
+# [ -e /etc/xdg/dunst/dunstrc ] && sudo mv /etc/xdg/dunst/dunstrc /etc/xdg/dunst/dunstrc.bak
+# sudo ln -sf ~/.config/i3/dunstrc /etc/xdg/dunst/dunstrc
 
 git config --global user.email "sriram.suresh449@gmail.com"
 git config --global user.name "Sriram Suresh"
@@ -52,8 +52,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # # ruby stuff
 # # this would also mean that you need to install ruby first. idk how to do that for ubuntu
 # # is chruby even a thing for ubuntu??
-gem install ruby-lsp
-gem install colorls
+sudo gem install ruby-lsp
+sudo gem install colorls
 
 # I am also skipping installing java lsp for now since I don't ever use Java and it seems complicated and why would i lose some seconds in loading a plugin I never even use
 
@@ -76,4 +76,4 @@ sudo /usr/bin/core_perl/cpan JSON
 
 # lxappearance &
 
-flatpak install --noninteractive flathub hu.irl.cameractrls
+# flatpak install --noninteractive flathub hu.irl.cameractrls
