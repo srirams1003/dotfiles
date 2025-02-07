@@ -80,3 +80,5 @@ sudo cpan JSON
 # lxappearance &
 
 flatpak install --noninteractive flathub hu.irl.cameractrls
+
+sudo timedatectl set-local-rtc 0 --adjust-system-clock
