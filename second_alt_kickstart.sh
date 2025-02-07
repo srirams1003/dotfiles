@@ -83,3 +83,4 @@ sudo cpan JSON
 # lxappearance &
 
 flatpak install --noninteractive flathub hu.irl.cameractrls
+sudo dnf install -y plasma-workspace-x11
