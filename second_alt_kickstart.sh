@@ -11,7 +11,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
 sudo apt update -y
-sudo apt install make gcc wdiff gnome-dictionary ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl docker.io gimp virtualbox ffmpeg tesseract-ocr gimagereader htop -y
+sudo apt install make gcc wdiff ripgrep unzip neovim tldr bat maim xclip xdotool fzf python3-pip fastfetch sl htop -y
 tldr -u
 
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
@@ -19,21 +19,8 @@ git clone https://github.com/srirams1003/lua-nvim-config.git "${XDG_CONFIG_HOME:
 
 git clone https://github.com/srirams1003/i3-dotfiles.git "${XDG_CONFIG_HOME:-$HOME/.config}"/i3
 
-sudo ln -sf ~/.config/i3/i3blocks.conf /etc/i3blocks.conf
-sudo ln -sf ~/.config/i3/i3status.conf /etc/i3status.conf # i use i3blocks instead of i3status but adding this too just in case
-ln -sf ~/.config/i3/.alacritty.toml ~/.alacritty.toml
-mkdir -p ~/.config/rofi
-ln -sf ~/.config/i3/config.rasi ~/.config/rofi/config.rasi
-
-# for rebinding esc to capslock and vice versa
-[ -e /usr/share/X11/xkb/symbols/pc ] && sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc.bak
-sudo ln -sf ~/.config/i3/usr-share-X11-xkb-symbols-pc /usr/share/X11/xkb/symbols/pc
 ln -sf ~/.config/i3/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/.config/i3/.zshrc ~/.zshrc
-
-# so I can change the notification timeout for dunst to 3 secs from default of 10 secs
-[ -e /etc/xdg/dunst/dunstrc ] && sudo mv /etc/xdg/dunst/dunstrc /etc/xdg/dunst/dunstrc.bak
-sudo ln -sf ~/.config/i3/dunstrc /etc/xdg/dunst/dunstrc
 
 git config --global user.email "sriram.suresh449@gmail.com"
 git config --global user.name "Sriram Suresh"
@@ -76,10 +63,3 @@ chsh -s $(which zsh)
 
 cd ~/dotfiles
 
-sudo cpan JSON
-
-# lxappearance &
-
-flatpak install --noninteractive flathub hu.irl.cameractrls
-
-sudo timedatectl set-local-rtc 0 --adjust-system-clock
