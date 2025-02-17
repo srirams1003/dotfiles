@@ -1,6 +1,6 @@
 # first script
 
-sudo apt update -y
+sudo apt update -y && sudo apt upgrade -y
 sudo apt install zsh nodejs npm vim tmux xsel -y
 sudo npm install n -g
 sudo n stable
