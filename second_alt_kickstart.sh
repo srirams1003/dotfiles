@@ -14,6 +14,8 @@ sudo apt update -y
 sudo apt install make git-extras gcc wdiff gnome-dictionary ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl docker.io gimp virtualbox ffmpeg tesseract-ocr dict zenity goldendict guvcview ruby-bundler htop -y
 tldr -u
 
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
 git clone https://github.com/srirams1003/lua-nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
