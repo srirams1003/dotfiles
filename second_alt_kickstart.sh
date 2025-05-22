@@ -22,6 +22,9 @@ git clone https://github.com/srirams1003/i3-dotfiles.git "${XDG_CONFIG_HOME:-$HO
 sudo ln -sf ~/.config/i3/i3blocks.conf /etc/i3blocks.conf
 sudo ln -sf ~/.config/i3/i3status.conf /etc/i3status.conf # i use i3blocks instead of i3status but adding this too just in case
 ln -sf ~/.config/i3/.alacritty.toml ~/.alacritty.toml
+# NOTE: adding these two lines below as they help with setting mouse cursor theme and size in i3
+ln -sf ~/.config/i3/.xinitrc ~/.xinitrc
+ln -sf ~/.config/i3/.Xresources ~/.Xresources
 mkdir -p ~/.config/rofi
 ln -sf ~/.config/i3/config.rasi ~/.config/rofi/config.rasi
 
