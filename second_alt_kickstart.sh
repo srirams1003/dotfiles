@@ -25,9 +25,10 @@ ln -sf ~/.config/i3/.alacritty.toml ~/.alacritty.toml
 mkdir -p ~/.config/rofi
 ln -sf ~/.config/i3/config.rasi ~/.config/rofi/config.rasi
 
-# for rebinding esc to capslock and vice versa
-[ -e /usr/share/X11/xkb/symbols/pc ] && sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc.bak
-sudo ln -sf ~/.config/i3/usr-share-X11-xkb-symbols-pc /usr/share/X11/xkb/symbols/pc
+# # for rebinding esc to capslock and vice versa
+# [ -e /usr/share/X11/xkb/symbols/pc ] && sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc.bak
+# sudo ln -sf ~/.config/i3/usr-share-X11-xkb-symbols-pc /usr/share/X11/xkb/symbols/pc
+# # commented the above lines out because it breaks with wayland/gdm3/even lightdm i think and the new solution in ~/.config/i3/startup.sh is much more elegant and doesn't break anything
 ln -sf ~/.config/i3/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/.config/i3/.zshrc ~/.zshrc
 
