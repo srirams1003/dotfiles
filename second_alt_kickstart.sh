@@ -87,6 +87,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # cp ~/dotfiles/tmux.conf ~/.tmux.conf # no longer using this as I want to add .tmux.conf to git too
 ln -sf ~/.config/i3/.tmux.conf ~/.tmux.conf
 
+# this command is for a little issue with virtualbox
+sudo usermod -aG vboxusers $USER
+
 source ~/.zshrc
 
 chsh -s $(which zsh)
