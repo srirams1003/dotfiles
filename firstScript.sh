@@ -1,11 +1,18 @@
-# first script
+#!/bin/bash
 
-sudo apt update -y
-sudo apt install zsh nodejs npm vim tmux xsel -y
-sudo npm install n -g
+# Update system
+sudo pacman -Syu --noconfirm
+
+# Install packages
+sudo pacman -S --noconfirm zsh nodejs npm vim tmux xsel curl wget git
+
+# Install `n` and use it to install latest stable Node.js
+sudo npm install -g n
 sudo n stable
-sudo npm install -g prettier markdown-it
-sudo apt install curl wget git -y
 
+# Install global npm packages
+sudo npm install -g prettier markdown-it
+
+# Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
