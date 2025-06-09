@@ -7,7 +7,7 @@
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-brew install neovim fastfetch ripgrep unzip tldr copyq bat fzf yarn alacritty
+brew install neovim fastfetch ripgrep unzip tldr copyq bat fzf yarn alacritty ghostty
 
 tldr -u
 
@@ -19,6 +19,7 @@ git clone https://github.com/srirams1003/i3-dotfiles.git "${XDG_CONFIG_HOME:-$HO
 ln -sf ~/.config/i3/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/.config/i3/.zshrc ~/.zshrc
 ln -sf ~/.config/i3/.alacritty.toml ~/.alacritty.toml
+ln -sf ~/.config/i3/ghostty-config ~/Library/Application\ Support/com.mitchellh.ghostty/config
 
 git config --global user.email "sriram.suresh449@gmail.com"
 git config --global user.name "Sriram Suresh"
