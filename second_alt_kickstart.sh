@@ -87,6 +87,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # cp ~/dotfiles/tmux.conf ~/.tmux.conf # no longer using this as I want to add .tmux.conf to git too
 ln -sf ~/.config/i3/.tmux.conf ~/.tmux.conf
 
+# # NOTE: need to do the linux equivalent of this, based on where ghostty expects the config file to be on linux
+# ln -sf ~/.config/i3/ghostty-config ~/Library/Application\ Support/com.mitchellh.ghostty/config
+
+
 # this command is for a little issue with virtualbox
 sudo usermod -aG vboxusers $USER
 
