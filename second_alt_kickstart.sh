@@ -24,9 +24,11 @@ git clone https://github.com/srirams1003/i3-dotfiles.git "${XDG_CONFIG_HOME:-$HO
 sudo ln -sf ~/.config/i3/i3blocks.conf /etc/i3blocks.conf
 sudo ln -sf ~/.config/i3/i3status.conf /etc/i3status.conf # i use i3blocks instead of i3status but adding this too just in case
 ln -sf ~/.config/i3/.alacritty.toml ~/.alacritty.toml
-# NOTE: adding these two lines below as they help with setting mouse cursor theme and size in i3
-ln -sf ~/.config/i3/.xinitrc ~/.xinitrc
-ln -sf ~/.config/i3/.Xresources ~/.Xresources
+
+# # NOTE: adding these two lines below as they help with setting mouse cursor theme and size in i3
+# ln -sf ~/.config/i3/.xinitrc ~/.xinitrc
+# ln -sf ~/.config/i3/.Xresources ~/.Xresources
+
 mkdir -p ~/.config/rofi
 ln -sf ~/.config/i3/config.rasi ~/.config/rofi/config.rasi
 
@@ -34,20 +36,24 @@ ln -sf ~/.config/i3/config.rasi ~/.config/rofi/config.rasi
 # [ -e /usr/share/X11/xkb/symbols/pc ] && sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc.bak
 # sudo ln -sf ~/.config/i3/usr-share-X11-xkb-symbols-pc /usr/share/X11/xkb/symbols/pc
 # # commented the above lines out because it breaks with wayland/gdm3/even lightdm i think and the new solution in ~/.config/i3/startup.sh is much more elegant and doesn't break anything
+
 ln -sf ~/.config/i3/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/.config/i3/.zshrc ~/.zshrc
-# # NOTE: for setting adwaita dark mode and other themes, checkout out the ~/.config/i3/gtk-3-settings.ini file that is a backup of ~/.config/gtk-3.0/settings.ini
-# # NOTE: for setting dark theme system-wide (on gtk-3 at least)
-[ -e /etc/environment ] && sudo mv /etc/environment /etc/environment.bak
-sudo ln -sf ~/.config/i3/etc-environment /etc/environment
 
-# # NOTE: for setting mouse cursor theme and size system-wide (on gtk-3 at least??)
-[ -e /etc/X11/Xresources/x11-common ] && sudo mv /etc/X11/Xresources/x11-common /etc/X11/Xresources/x11-common.bak
-sudo ln -sf ~/.config/i3/etc-X11-Xresources-x11-common /etc/X11/Xresources/x11-common 
+# # # NOTE: for setting adwaita dark mode and other themes, checkout out the ~/.config/i3/gtk-3-settings.ini file that is a backup of ~/.config/gtk-3.0/settings.ini
+# # # NOTE: for setting dark theme system-wide (on gtk-3 at least)
+# [ -e /etc/environment ] && sudo mv /etc/environment /etc/environment.bak
+# sudo ln -sf ~/.config/i3/etc-environment /etc/environment
+
+# # # NOTE: for setting mouse cursor theme and size system-wide (on gtk-3 at least??)
+# [ -e /etc/X11/Xresources/x11-common ] && sudo mv /etc/X11/Xresources/x11-common /etc/X11/Xresources/x11-common.bak
+# sudo ln -sf ~/.config/i3/etc-X11-Xresources-x11-common /etc/X11/Xresources/x11-common 
 
 # so I can change the notification timeout for dunst to 3 secs from default of 10 secs
 [ -e /etc/xdg/dunst/dunstrc ] && sudo mv /etc/xdg/dunst/dunstrc /etc/xdg/dunst/dunstrc.bak
 sudo ln -sf ~/.config/i3/dunstrc /etc/xdg/dunst/dunstrc
+
+sudo ln -sf ~/.config/i3/slick-greeter.conf /etc/lightdm/slick-greeter.conf
 
 git config --global user.email "sriram.suresh449@gmail.com"
 git config --global user.name "Sriram Suresh"
