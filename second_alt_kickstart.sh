@@ -55,6 +55,12 @@ sudo ln -sf ~/.config/i3/dunstrc /etc/xdg/dunst/dunstrc
 
 sudo ln -sf ~/.config/i3/slick-greeter.conf /etc/lightdm/slick-greeter.conf
 
+sudo mkdir -p /etc/systemd/sleep.conf.d
+sudo ln -sf ~/.config/i3/systemd-sleep/no-suspend-then-hibernate.conf /etc/systemd/sleep.conf.d/no-suspend-then-hibernate.conf
+sudo systemctl daemon-reexec
+
+
+
 git config --global user.email "sriram.suresh449@gmail.com"
 git config --global user.name "Sriram Suresh"
 
