@@ -1,9 +1,0 @@
-sudo apt update
-sudo apt install tmux
-
-# clone this repo to install the plugin install manager thingy for tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# then simply enter a tmux session and do both:  "tmux source-file ~/.tmux.conf" and "<tmux prefix> + I" 
-
-or just do:          "<tmux prefix> + I"
