@@ -8,39 +8,29 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
-sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
-sudo apt update -y
-sudo apt install make git-extras gcc wdiff gnome-dictionary ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl docker.io gimp virtualbox ffmpeg tesseract-ocr dict zenity goldendict guvcview ruby-bundler htop -y
-tldr -u
+# sudo dnf install make git-extras gcc wdiff gnome-dictionary ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl docker.io gimp virtualbox ffmpeg tesseract-ocr dict zenity goldendict guvcview ruby-bundler htop -y
+# NOTE: install these: simplescreenrecoder, maim, xclip, xdotool, psensor,
 
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+sudo dnf install make git-extras gcc wdiff ripgrep unzip neovim tldr playerctl alacritty copyq bat fzf ImageMagick python3-pip fastfetch sl docker gimp virtualbox ffmpeg tesseract dict zenity goldendict guvcview htop -y --allowerasing
+
+tldr -u
 
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
 git clone https://github.com/srirams1003/lua-nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
 git clone https://github.com/srirams1003/i3-dotfiles.git "${XDG_CONFIG_HOME:-$HOME/.config}"/i3
 
-sudo ln -sf ~/.config/i3/i3blocks.conf /etc/i3blocks.conf
-sudo ln -sf ~/.config/i3/i3status.conf /etc/i3status.conf # i use i3blocks instead of i3status but adding this too just in case
 ln -sf ~/.config/i3/.alacritty.toml ~/.alacritty.toml
-
-
-mkdir -p ~/.config/rofi
-ln -sf ~/.config/i3/config.rasi ~/.config/rofi/config.rasi
 
 
 ln -sf ~/.config/i3/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/.config/i3/.zshrc ~/.zshrc
 
 
-# so I can change the notification timeout for dunst to 3 secs from default of 10 secs
-[ -e /etc/xdg/dunst/dunstrc ] && sudo mv /etc/xdg/dunst/dunstrc /etc/xdg/dunst/dunstrc.bak
-sudo ln -sf ~/.config/i3/dunstrc /etc/xdg/dunst/dunstrc
-
-sudo mkdir -p /etc/systemd/sleep.conf.d
-sudo ln -sf ~/.config/i3/systemd-sleep/no-suspend-then-hibernate.conf /etc/systemd/sleep.conf.d/no-suspend-then-hibernate.conf
-sudo systemctl daemon-reexec
+# # so I can change the notification timeout for dunst to 3 secs from default of 10 secs
+# [ -e /etc/xdg/dunst/dunstrc ] && sudo mv /etc/xdg/dunst/dunstrc /etc/xdg/dunst/dunstrc.bak
+# sudo ln -sf ~/.config/i3/dunstrc /etc/xdg/dunst/dunstrc
 
 
 git config --global user.email "sriram.suresh449@gmail.com"
@@ -52,11 +42,10 @@ git config --global diff.tool nvimdiff
 sudo npm i -g pyright
 sudo npm install -g diagnostic-languageserver
 sudo npm install -g typescript-language-server typescript
-sudo apt install clang clangd -y
-# sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
+sudo dnf install clang clangd -y
 sudo npm i -g vscode-langservers-extracted  # for html
 sudo npm i -g css-variables-language-server # for css
-sudo apt-get -y install golang-go gopls
+sudo dnf -y install golang-go gopls
 
 # powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -64,17 +53,13 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # # ruby stuff
 # # this would also mean that you need to install ruby first. idk how to do that for ubuntu
 # # is chruby even a thing for ubuntu??
-sudo apt-get -y install ruby-full
+sudo dnf install ruby ruby-devel -y
 # sudo gem install ruby-lsp
 # sudo gem install colorls
 # made these two changes below to not use sudo anymore cuz i am having to use sudo from bundle install, which is not desirable
 gem install ruby-lsp
 gem install colorls
 
-# I am also skipping installing java lsp for now since I don't ever use Java and it seems complicated and why would i lose some seconds in loading a plugin I never even use
-
-# cp ~/dotfiles/Win10_WSL_zshrc.txt ~/.
-# mv ~/Win10_WSL_zshrc.txt ~/.zshrc
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
@@ -94,8 +79,3 @@ chsh -s $(which zsh)
 
 cd ~/dotfiles
 
-sudo cpan JSON
-
-# lxappearance &
-
-sudo timedatectl set-local-rtc 0 --adjust-system-clock
