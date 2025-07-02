@@ -9,10 +9,12 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
 # sudo dnf install make git-extras gcc wdiff gnome-dictionary ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl docker.io gimp virtualbox ffmpeg tesseract-ocr dict zenity goldendict guvcview ruby-bundler htop -y
-# NOTE: install these: simplescreenrecoder, maim, xclip, xdotool, psensor,
 
+# NOTE: install these: simplescreenrecoder, maim, xclip, xdotool, psensor, virtualbox
 
-sudo dnf install make git-extras gcc wdiff ripgrep unzip neovim tldr playerctl alacritty copyq bat fzf ImageMagick python3-pip fastfetch sl docker gimp virtualbox ffmpeg tesseract dict zenity goldendict guvcview htop -y --allowerasing
+sudo dnf copr enable solopasha/hyprland -y
+
+sudo dnf install make git-extras gcc wdiff ripgrep unzip neovim tldr playerctl alacritty copyq bat fzf ImageMagick python3-pip fastfetch sl docker gimp ffmpeg tesseract dict zenity goldendict guvcview htop blueman hyprland nmtui nm-applet hyprpaper -y --allowerasing
 
 tldr -u
 
@@ -54,11 +56,11 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # # this would also mean that you need to install ruby first. idk how to do that for ubuntu
 # # is chruby even a thing for ubuntu??
 sudo dnf install ruby ruby-devel -y
-# sudo gem install ruby-lsp
-# sudo gem install colorls
-# made these two changes below to not use sudo anymore cuz i am having to use sudo from bundle install, which is not desirable
-gem install ruby-lsp
-gem install colorls
+sudo gem install ruby-lsp
+sudo gem install colorls
+# # made these two changes below to not use sudo anymore cuz i am having to use sudo from bundle install, which is not desirable
+# gem install ruby-lsp
+# gem install colorls
 
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
