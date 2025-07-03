@@ -8,13 +8,15 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugi
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-# sudo dnf install make git-extras gcc wdiff gnome-dictionary ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl docker.io gimp virtualbox ffmpeg tesseract-ocr dict zenity goldendict guvcview ruby-bundler htop -y
+# sudo apt install make git-extras gcc wdiff gnome-dictionary ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl docker.io gimp virtualbox ffmpeg tesseract-ocr dict zenity goldendict guvcview ruby-bundler htop -y
 
-# NOTE: install these: simplescreenrecoder, maim, xclip, xdotool, psensor, virtualbox
+# NOTE: need to install these (or replacements): simplescreenrecoder, maim, xclip, xdotool, psensor, virtualbox
 
-sudo dnf copr enable solopasha/hyprland -y
+# # NOTE: i commented out these two lines below as I don't wanna use hyprland and thus don't need those extra packages
+# sudo dnf copr enable solopasha/hyprland -y
+# sudo dnf install make git-extras gcc wdiff ripgrep unzip neovim tldr playerctl alacritty copyq bat fzf ImageMagick python3-pip fastfetch sl docker gimp ffmpeg tesseract dict zenity goldendict guvcview htop blueman hyprland nmtui nm-applet hyprpaper -y --allowerasing
 
-sudo dnf install make git-extras gcc wdiff ripgrep unzip neovim tldr playerctl alacritty copyq bat fzf ImageMagick python3-pip fastfetch sl docker gimp ffmpeg tesseract dict zenity goldendict guvcview htop blueman hyprland nmtui nm-applet hyprpaper -y --allowerasing
+sudo dnf install make git-extras gcc wdiff ripgrep unzip neovim tldr playerctl alacritty copyq bat fzf ImageMagick python3-pip fastfetch sl docker gimp ffmpeg tesseract dict zenity goldendict guvcview htop cmake -y --allowerasing
 
 tldr -u
 
@@ -24,7 +26,6 @@ git clone https://github.com/srirams1003/lua-nvim-config.git "${XDG_CONFIG_HOME:
 git clone https://github.com/srirams1003/i3-dotfiles.git "${XDG_CONFIG_HOME:-$HOME/.config}"/i3
 
 ln -sf ~/.config/i3/.alacritty.toml ~/.alacritty.toml
-
 
 ln -sf ~/.config/i3/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/.config/i3/.zshrc ~/.zshrc
@@ -72,12 +73,12 @@ ln -sf ~/.config/i3/.tmux.conf ~/.tmux.conf
 # ln -sf ~/.config/i3/ghostty-config ~/Library/Application\ Support/com.mitchellh.ghostty/config
 
 
-# this command is for a little issue with virtualbox
-sudo usermod -aG vboxusers $USER
+# # NOTE: this command is to fix a little issue with virtualbox
+# sudo usermod -aG vboxusers $USER
 
 source ~/.zshrc
 
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 
 cd ~/dotfiles
 
