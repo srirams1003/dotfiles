@@ -16,7 +16,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 # sudo dnf copr enable solopasha/hyprland -y
 # sudo dnf install make git-extras gcc wdiff ripgrep unzip neovim tldr playerctl alacritty copyq bat fzf ImageMagick python3-pip fastfetch sl docker gimp ffmpeg tesseract dict zenity goldendict guvcview htop blueman hyprland nmtui nm-applet hyprpaper -y --allowerasing
 
-sudo dnf install make git-extras gcc wdiff ripgrep unzip neovim tldr playerctl alacritty copyq bat fzf ImageMagick python3-pip fastfetch sl gimp ffmpeg tesseract dict zenity goldendict guvcview htop cmake grim slurp -y --allowerasing
+sudo dnf install make git-extras gcc wdiff ripgrep unzip neovim tldr playerctl alacritty copyq bat fzf ImageMagick python3-pip fastfetch sl gimp ffmpeg tesseract dict zenity goldendict guvcview htop cmake sensors -y --allowerasing
 
 tldr -u
 
