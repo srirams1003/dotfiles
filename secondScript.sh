@@ -38,9 +38,9 @@ ln -sf ~/.config/i3/.zshrc ~/.zshrc
 [ -e /etc/xdg/dunst/dunstrc ] && sudo mv /etc/xdg/dunst/dunstrc /etc/xdg/dunst/dunstrc.bak
 sudo ln -sf ~/.config/i3/dunstrc /etc/xdg/dunst/dunstrc
 
-sudo mkdir -p /etc/systemd/sleep.conf.d
-sudo ln -sf ~/.config/i3/systemd-sleep/no-suspend-then-hibernate.conf /etc/systemd/sleep.conf.d/no-suspend-then-hibernate.conf
-sudo systemctl daemon-reexec
+# sudo mkdir -p /etc/systemd/sleep.conf.d
+# sudo ln -sf ~/.config/i3/systemd-sleep/no-suspend-then-hibernate.conf /etc/systemd/sleep.conf.d/no-suspend-then-hibernate.conf
+# sudo systemctl daemon-reexec
 
 
 git config --global user.email "sriram.suresh449@gmail.com"
@@ -65,11 +65,11 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # # this would also mean that you need to install ruby first. idk how to do that for ubuntu
 # # is chruby even a thing for ubuntu??
 sudo apt-get -y install ruby-full
-# sudo gem install ruby-lsp
-# sudo gem install colorls
-# made these two changes below to not use sudo anymore cuz i am having to use sudo from bundle install, which is not desirable
-gem install ruby-lsp
-gem install colorls
+sudo gem install ruby-lsp
+sudo gem install colorls
+# # made these two changes below to not use sudo anymore cuz i am having to use sudo from bundle install, which is not desirable
+# gem install ruby-lsp
+# gem install colorls
 
 # I am also skipping installing java lsp for now since I don't ever use Java and it seems complicated and why would i lose some seconds in loading a plugin I never even use
 
