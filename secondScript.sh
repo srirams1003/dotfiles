@@ -11,7 +11,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
 sudo apt update -y
-sudo apt install make cmake git-extras gcc wdiff gnome-dictionary ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl docker.io gimp ffmpeg tesseract-ocr dict zenity goldendict guvcview ruby-bundler htop -y
+sudo apt install make cmake git-extras gcc wdiff gnome-dictionary ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl docker.io gimp ffmpeg tesseract-ocr dict zenity goldendict guvcview ruby-bundler htop mysql-server zathura texlive-full -y
 tldr -u
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
