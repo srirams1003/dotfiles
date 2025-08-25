@@ -15,6 +15,7 @@ sudo apt install make cmake git-extras gcc wdiff gnome-dictionary ripgrep unzip 
 tldr -u
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+xargs flatpak install -y < flatpaks.txt
 
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
 git clone https://github.com/srirams1003/lua-nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
