@@ -4,6 +4,8 @@
 # log out and log back in to machine
 # do prefix + capital I inside a tmux session
 
+sudo apt upgrade -y
+
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
