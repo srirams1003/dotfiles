@@ -53,7 +53,7 @@ git config --global credential.helper store  'cache --timeout=3000000'
 git config --global diff.tool nvimdiff
 
 sudo npm i -g pyright
-sudo npm install -g nodemon tree-sitter-cli
+sudo npm install -g nodemon tree-sitter-cli firebase-tools
 sudo npm install -g diagnostic-languageserver
 sudo npm install -g typescript-language-server typescript
 sudo apt install clang clangd -y
