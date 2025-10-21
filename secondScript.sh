@@ -103,3 +103,6 @@ sudo cpan JSON
 # lxappearance &
 
 sudo timedatectl set-local-rtc 0 --adjust-system-clock
+
+source ~/dotfiles/fixing_libcurses_error_stm32cubeide.sh
+
