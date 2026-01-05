@@ -13,40 +13,18 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
 sudo apt update -y
-sudo apt install make cmake git-extras gcc wdiff gnome-dictionary ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl gimp ffmpeg tesseract-ocr dict zenity goldendict guvcview ruby-bundler htop mysql-server zathura texlive-full vlc cowsay valgrind espeak cmatrix git-svn picocom dunst i3lock xss-lock -y
+sudo apt install make cmake git-extras gcc wdiff ripgrep unzip neovim tldr bat xclip xdotool fzf imagemagick python3-pip fastfetch sl ffmpeg tesseract-ocr dict ruby-bundler htop mysql-server cowsay valgrind espeak cmatrix git-svn -y
 tldr -u
-
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-xargs flatpak install -y < flatpaks.txt
 
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
 git clone https://github.com/srirams1003/lua-nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
 git clone https://github.com/srirams1003/i3-dotfiles.git "${XDG_CONFIG_HOME:-$HOME/.config}"/i3
 
-sudo ln -sf ~/.config/i3/i3blocks.conf /etc/i3blocks.conf
-sudo ln -sf ~/.config/i3/i3status.conf /etc/i3status.conf # i use i3blocks instead of i3status but adding this too just in case
-ln -sf ~/.config/i3/.alacritty.toml ~/.alacritty.toml
-
-
-mkdir -p ~/.config/rofi
-ln -sf ~/.config/i3/config.rasi ~/.config/rofi/config.rasi
-
-
 ln -sf ~/.config/i3/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/.config/i3/.zshrc ~/.zshrc
 
-
-# so I can change the notification timeout for dunst to 3 secs from default of 10 secs
-[ -e /etc/xdg/dunst/dunstrc ] && sudo mv /etc/xdg/dunst/dunstrc /etc/xdg/dunst/dunstrc.bak
-sudo ln -sf ~/.config/i3/dunstrc /etc/xdg/dunst/dunstrc
-
-# sudo mkdir -p /etc/systemd/sleep.conf.d
-# sudo ln -sf ~/.config/i3/systemd-sleep/no-suspend-then-hibernate.conf /etc/systemd/sleep.conf.d/no-suspend-then-hibernate.conf
-# sudo systemctl daemon-reexec
-
-
-git config --global user.email "sriram.suresh449@gmail.com"
+git config --global user.email "sriram.suresh@terralogic.com"
 git config --global user.name "Sriram Suresh"
 
 git config --global credential.helper store  'cache --timeout=3000000'
@@ -57,7 +35,6 @@ sudo npm install -g nodemon tree-sitter-cli firebase-tools
 sudo npm install -g diagnostic-languageserver
 sudo npm install -g typescript-language-server typescript
 sudo apt install clang clangd -y
-# sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
 sudo npm i -g vscode-langservers-extracted  # for html
 sudo npm i -g css-variables-language-server # for css
 sudo apt-get -y install golang-go gopls
@@ -85,24 +62,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # cp ~/dotfiles/tmux.conf ~/.tmux.conf # no longer using this as I want to add .tmux.conf to git too
 ln -sf ~/.config/i3/.tmux.conf ~/.tmux.conf
 
-# # NOTE: need to do the linux equivalent of this, based on where ghostty expects the config file to be on linux
-# ln -sf ~/.config/i3/ghostty-config ~/Library/Application\ Support/com.mitchellh.ghostty/config
-
-
-# this command is for a little issue with virtualbox
-sudo usermod -aG vboxusers $USER
-
 source ~/.zshrc
 
 chsh -s $(which zsh)
 
 cd ~/dotfiles
-
-sudo cpan JSON
-
-# lxappearance &
-
-sudo timedatectl set-local-rtc 0 --adjust-system-clock
-
-source ~/dotfiles/fixing_libcurses_error_stm32cubeide.sh
 
