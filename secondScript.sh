@@ -86,6 +86,7 @@ ln -sf ~/.config/i3/.tmux.conf ~/.tmux.conf
 # # NOTE: need to do the linux equivalent of this, based on where ghostty expects the config file to be on linux
 # ln -sf ~/.config/i3/ghostty-config ~/Library/Application\ Support/com.mitchellh.ghostty/config
 
+sudo usermod -aG docker $USER
 
 source ~/.zshrc
 
