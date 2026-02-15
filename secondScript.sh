@@ -13,11 +13,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
 sudo apt update -y
-sudo apt install make cmake git-extras gcc wdiff gnome-dictionary ripgrep unzip neovim tldr picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl gimp ffmpeg tesseract-ocr dict zenity goldendict guvcview ruby-bundler htop mysql-server zathura texlive-full vlc cowsay valgrind espeak cmatrix git-svn picocom dunst i3lock xss-lock -y
+sudo apt install make cmake git-extras gcc wdiff gnome-dictionary ripgrep unzip neovim pipx picom playerctl feh i3 i3status i3blocks alacritty simplescreenrecorder psensor rofi lxappearance arandr copyq bat maim xclip xdotool fzf imagemagick python3-pip fastfetch sl gimp ffmpeg tesseract-ocr dict zenity goldendict guvcview ruby-bundler htop mysql-server zathura texlive-full vlc cowsay valgrind espeak cmatrix git-svn picocom dunst i3lock xss-lock -y
+pipx install tldr
 tldr -u
-
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-xargs flatpak install -y < flatpaks.txt
 
 # https://github.com/nvim-lua/kickstart.nvim --> refer to this repo
 git clone https://github.com/srirams1003/lua-nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
@@ -88,9 +86,6 @@ ln -sf ~/.config/i3/.tmux.conf ~/.tmux.conf
 # # NOTE: need to do the linux equivalent of this, based on where ghostty expects the config file to be on linux
 # ln -sf ~/.config/i3/ghostty-config ~/Library/Application\ Support/com.mitchellh.ghostty/config
 
-
-# this command is for a little issue with virtualbox
-sudo usermod -aG vboxusers $USER
 
 source ~/.zshrc
 
