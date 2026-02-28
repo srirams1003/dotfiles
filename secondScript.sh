@@ -89,8 +89,8 @@ ln -sf ~/.config/i3/.tmux.conf ~/.tmux.conf
 # ln -sf ~/.config/i3/ghostty-config ~/Library/Application\ Support/com.mitchellh.ghostty/config
 
 
-# this command is for a little issue with virtualbox
-sudo usermod -aG vboxusers $USER
+## this command is for a little issue with virtualbox
+# sudo usermod -aG vboxusers $USER
 
 source ~/.zshrc
 
