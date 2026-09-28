@@ -53,7 +53,13 @@ git config --global credential.helper store  'cache --timeout=3000000'
 git config --global diff.tool nvimdiff
 
 sudo npm i -g pyright
-sudo npm install -g nodemon tree-sitter-cli firebase-tools
+# tree-sitter-cli is PINNED. 0.26 removed the --no-bindings flag, which
+# nvim-treesitter's (archived) master branch still passes, so parsers that have
+# to be generated — latex, markdown_inline — fail with
+#   error: unexpected argument '--no-bindings' found
+# and retry noisily on every nvim start. Unpin only when the nvim config moves
+# to treesitter main, which also means moving telescope off its 0.1.x branch.
+sudo npm install -g nodemon tree-sitter-cli@0.25.10 firebase-tools
 sudo npm install -g diagnostic-languageserver
 sudo npm install -g typescript-language-server typescript
 sudo apt install clang clangd -y
