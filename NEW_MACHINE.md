@@ -99,7 +99,17 @@ This restores the atuin history DB, `~/.zshrc.local` (cluster aliases, Windows p
 hosts) and `~/.claude/settings.json` (Claude Code hooks, permissions, project context). Import never overwrites — an existing
 `~/.zshrc.local` gets the incoming copy as `.incoming` beside it.
 
-**Skip this and everything still works, you just have an empty history.**
+Also install the atuin config — `secondScript.sh` installs atuin itself, but with upstream
+defaults:
+
+```bash
+mkdir -p ~/.config/atuin && cp ~/.config/i3/atuin/config.toml ~/.config/atuin/
+```
+
+That file carries the `history_filter` patterns that keep token-shaped commands out of the
+history database, plus `auto_sync = false`. Without it you lose the credential filtering.
+
+**Skip the import and everything still works, you just have an empty history.**
 
 ---
 
