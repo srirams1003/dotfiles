@@ -119,12 +119,25 @@ What does **not** ship is `~/.claude/settings.json`, which holds the `SessionSta
 `SessionEnd` hooks that keep the Claude↔pane map fresh, plus permissions and project
 context. It is restored by step 4 above, from the encrypted bundle.
 
-If you are on a machine without the bundle, merge the portable fragment by hand — it
-contains no secrets:
+The rest of your Claude config **is** versioned, and none of it is restored automatically:
+
+```bash
+cp ~/.config/i3/claude/statusline-command.sh ~/.claude/ && chmod +x ~/.claude/statusline-command.sh
+cp ~/.config/i3/claude/keybindings.json ~/.claude/
+cp ~/.config/i3/claude/mcp.json ~/.claude/
+```
+
+`statusline-command.sh` matters most — `settings.json` points at that exact path, so
+without it the status line silently stops rendering.
+
+On a machine without the bundle, also merge the hooks fragment by hand:
 
 ```bash
 cat ~/.config/i3/claude/settings-hooks.json      # merge into ~/.claude/settings.json
 ```
+
+See [`claude/README.md`](https://github.com/srirams1003/i3-dotfiles/blob/main/claude/README.md)
+for what is public vs bundled and why.
 
 Then after a reboot, restored panes come back with `claude --resume <id>` already typed:
 
