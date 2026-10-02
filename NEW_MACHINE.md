@@ -95,15 +95,46 @@ Fetch the bundle from Drive, then:
 ~/.config/i3/scripts/machine-migrate import ~/machine-state-drive.tar.gpg
 ```
 
-This restores the atuin history DB and `~/.zshrc.local` (machine- and work-specific shell
-config: cluster aliases, Windows paths, lab hosts). Import never overwrites — an existing
+This restores the atuin history DB, `~/.zshrc.local` (cluster aliases, Windows paths, lab
+hosts) and `~/.claude/settings.json` (Claude Code hooks, permissions, project context). Import never overwrites — an existing
 `~/.zshrc.local` gets the incoming copy as `.incoming` beside it.
 
 **Skip this and everything still works, you just have an empty history.**
 
 ---
 
-## 5. tmux
+## 5. Claude Code
+
+Not installed by the scripts — install it however you normally do, then:
+
+```bash
+claude --version
+```
+
+The tmux session-restore wiring ships with `i3-dotfiles`: `scripts/claude-tmux-*`,
+`scripts/claude-panes`, and the resurrect hooks and keybindings in `.tmux.conf`. Nothing to
+do there.
+
+What does **not** ship is `~/.claude/settings.json`, which holds the `SessionStart` /
+`SessionEnd` hooks that keep the Claude↔pane map fresh, plus permissions and project
+context. It is restored by step 4 above, from the encrypted bundle.
+
+If you are on a machine without the bundle, merge the portable fragment by hand — it
+contains no secrets:
+
+```bash
+cat ~/.config/i3/claude/settings-hooks.json      # merge into ~/.claude/settings.json
+```
+
+Then after a reboot, restored panes come back with `claude --resume <id>` already typed:
+
+| key | does |
+|---|---|
+| `prefix + C-a` | launch every mapped session |
+| `prefix + C-p` | re-prime (types, no Enter) |
+| `prefix + C-n` | popup the generated checklist |
+
+## 6. tmux
 
 Inside a tmux session:
 
@@ -117,7 +148,7 @@ paths that will not exist here. Layouts start fresh and survive reboots from the
 
 ---
 
-## 6. Hourly backup timer
+## 7. Hourly backup timer
 
 ```bash
 mkdir -p ~/.config/systemd/user
@@ -132,7 +163,7 @@ the missed occurrence rather than skipping it.
 
 ---
 
-## 7. Check it worked
+## 8. Check it worked
 
 ```bash
 atuin stats                       # your command history is there
@@ -156,7 +187,7 @@ tmux                              # then Ctrl-R for atuin search
 
 ## Things that are deliberately not in any repo
 
-Shell history, tmux layouts, clipboard exports, TLS material, `~/.zshrc.local`, and SSH
-private keys. All three repos are public; anything naming an employer, client, cluster or
+Shell history, tmux layouts, clipboard exports, TLS material, `~/.zshrc.local`,
+`~/.claude/settings.json`, and SSH private keys. All three repos are public; anything naming an employer, client, cluster or
 host stays out of them. The encrypted bundle carries what must travel; the SSH key is
 regenerated instead.
