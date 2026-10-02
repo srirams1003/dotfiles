@@ -45,6 +45,17 @@ sudo npm i -g vscode-langservers-extracted  # for html
 sudo npm i -g css-variables-language-server # for css
 sudo apt-get -y install golang-go gopls
 
+# atuin — shell history, searchable and portable. Replaces the old approach of
+# committing ~/.zsh_history into the i3-dotfiles repo, which gave permanent public
+# retention of every command. Installed to ~/.local/bin, no sudo needed.
+mkdir -p ~/.local/bin
+curl -sSL https://github.com/atuinsh/atuin/releases/latest/download/atuin-x86_64-unknown-linux-gnu.tar.gz \
+  | tar xz -C /tmp && install -m755 "$(find /tmp -name atuin -type f | head -1)" ~/.local/bin/atuin
+atuin import zsh || true
+# To bring history from another machine:
+#   ~/.config/i3/scripts/atuin-migrate import <export>.db.gpg
+
+
 # powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
