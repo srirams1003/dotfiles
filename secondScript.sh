@@ -52,8 +52,8 @@ mkdir -p ~/.local/bin
 curl -sSL https://github.com/atuinsh/atuin/releases/latest/download/atuin-x86_64-unknown-linux-gnu.tar.gz \
   | tar xz -C /tmp && install -m755 "$(find /tmp -name atuin -type f | head -1)" ~/.local/bin/atuin
 atuin import zsh || true
-# To bring history from another machine:
-#   ~/.config/i3/scripts/atuin-migrate import <export>.db.gpg
+# To bring history and work aliases from another machine, see the summary this
+# script prints at the end.
 
 
 # powerlevel10k
@@ -85,3 +85,37 @@ chsh -s $(which zsh)
 
 cd ~/dotfiles
 
+cat <<'DONE'
+
+============================================================
+  Installed. Four things are left, and they need you:
+============================================================
+
+1. Log out and back in   (zsh becomes the login shell)
+
+2. In a tmux session:  prefix + I     (installs tmux plugins)
+
+3. GitHub SSH access — generate a key for THIS machine:
+
+     ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_personal -C "$(hostname) personal github"
+     cat ~/.config/i3/ssh/config.github-personal >> ~/.ssh/config && chmod 600 ~/.ssh/config
+     cat ~/.ssh/id_ed25519_personal.pub      # paste at github.com/settings/keys
+     ssh -T git@github-personal              # expect: Hi srirams1003!
+
+   Never copy an old machine's key. Delete retired keys on GitHub.
+
+4. Restore shell history + work aliases from your encrypted bundle
+   (the one on Google Drive — you need its passphrase):
+
+     ~/.config/i3/scripts/machine-migrate verify ~/machine-state-drive.tar.gpg
+     ~/.config/i3/scripts/machine-migrate import ~/machine-state-drive.tar.gpg
+
+   Without this you get the config but an empty history.
+
+Note: this clones i3-dotfiles at its default branch (main). If this machine
+has its own branch — wsl2-work, arch, macos, … — switch to it:
+
+     git -C ~/.config/i3 checkout <branch>
+
+============================================================
+DONE

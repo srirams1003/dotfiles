@@ -21,7 +21,13 @@ Then **log out and back in** so zsh becomes the login shell, and:
 source ./secondScript.sh
 ```
 
-Finally, inside a tmux session, press `prefix + I` to install the tmux plugins.
+The second script prints a summary of what is left when it finishes. In short: log out
+and back in, `prefix + I` in tmux, generate a per-machine SSH key, and restore your shell
+history from the encrypted bundle with
+[`machine-migrate`](https://github.com/srirams1003/i3-dotfiles#migrating-to-a-new-machine).
+
+Those four are deliberately manual: two need a fresh login shell, one needs you to paste a
+key into GitHub, and one needs a passphrase only you have.
 
 ---
 
