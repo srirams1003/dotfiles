@@ -9,25 +9,23 @@ Debian/Ubuntu (apt) is the assumed base.
 
 ---
 
-## Reproduce the setup
+## Setting up a new machine
+
+**→ [NEW_MACHINE.md](NEW_MACHINE.md)** — the complete runbook, start to finish. Everything
+you need is there and nowhere else.
+
+The short version:
 
 ```bash
-source ./firstScript.sh
-```
-
-Then **log out and back in** so zsh becomes the login shell, and:
-
-```bash
+git clone https://github.com/srirams1003/dotfiles.git ~/dotfiles
+cd ~/dotfiles && source ./firstScript.sh
+# log out, log back in
 source ./secondScript.sh
 ```
 
-The second script prints a summary of what is left when it finishes. In short: log out
-and back in, `prefix + I` in tmux, generate a per-machine SSH key, and restore your shell
-history from the encrypted bundle with
-[`machine-migrate`](https://github.com/srirams1003/i3-dotfiles#migrating-to-a-new-machine).
-
-Those four are deliberately manual: two need a fresh login shell, one needs you to paste a
-key into GitHub, and one needs a passphrase only you have.
+Then four manual steps the scripts cannot do — branch, SSH key, history restore, tmux
+plugins — all spelled out in [NEW_MACHINE.md](NEW_MACHINE.md) and printed by
+`secondScript.sh` when it finishes.
 
 ---
 

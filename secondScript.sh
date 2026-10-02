@@ -88,7 +88,8 @@ cd ~/dotfiles
 cat <<'DONE'
 
 ============================================================
-  Installed. Four things are left, and they need you:
+  Installed. Four things are left, and they need you.
+  Full runbook: ~/dotfiles/NEW_MACHINE.md
 ============================================================
 
 1. Log out and back in   (zsh becomes the login shell)
